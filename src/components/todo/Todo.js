@@ -17,7 +17,6 @@ export function Todo() {
   const [toDoElementEdit, setToDoElementEdit] = useState(null);
 
   const {
-    openTodoModalAbm,
     setOpenTodoModalAbm
   } = useAppContext();
 
@@ -97,7 +96,7 @@ export function Todo() {
 
   const ModalAbmComponent = () => {
     return (
-      <TodoModalAbm open={openTodoModalAbm} data={toDoElementEdit}/>
+      <TodoModalAbm data={toDoElementEdit}/>
     )
   }
 
@@ -122,7 +121,7 @@ export function Todo() {
         />
         <button 
           type="button" 
-          className="btn btn-success float-end"
+          className="btn btn-success float-end mb-2"
           onClick={() => { setOpenTodoModalAbm(true); setToDoElementEdit(null) }}
         >
           Add New Task

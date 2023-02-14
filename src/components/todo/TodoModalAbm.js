@@ -7,7 +7,7 @@ import {v4 as uuid} from 'uuid'
 import Form from 'react-bootstrap/Form';
 import { useAppContext } from '../../context';
 
-function TodoModalAbm({open, data}) {
+function TodoModalAbm({data}) {
   const dispatch = useDispatch()
 
   const {
