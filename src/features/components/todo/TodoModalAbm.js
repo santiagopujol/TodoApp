@@ -48,7 +48,6 @@ function TodoModalAbm({open, data}) {
         dispatch(updateTodo(stateForm))
       }
       handleClose()
-      // setOperationFinalized(true)
     } catch (error) {
       console.log("Error catch:", error);
     }

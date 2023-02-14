@@ -14,7 +14,6 @@ export function Todo() {
   const userState = useSelector((state) => state.user)
   const dispatch = useDispatch()
   const navigate = useNavigate();
-  const [openModalAbm, setOpenModalAbm] = useState(false);
   const [toDoElementEdit, setToDoElementEdit] = useState(null);
 
   const {
@@ -104,7 +103,6 @@ export function Todo() {
 
   return (
     <>
-      {/* Aqui iria Header component para navbar de login y menu */}
       <div className="m-2">
         <h4 className="float-start text-primary"><b>Todo App</b> - Todo List</h4>
         <button 

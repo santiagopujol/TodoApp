@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import logo from '../../../logo.svg';
 import { getUsers, setUserLogin } from '../../../redux/slices/user/userSlice';
 import { useEffect, useState } from "react";
@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 import Alert from 'react-bootstrap/Alert';
 
 export function Login() {
-  // const userState = useSelector((state) => state.user)
   const dispatch = useDispatch()
   const navigate = useNavigate();
 
@@ -30,12 +29,14 @@ export function Login() {
       const userLogged = localStorage.getItem("userLogged") !== null 
         ? JSON.parse(localStorage.getItem("userLogged")) 
         : null;
+
       if (userLogged !== null) {
         setShowErrorAlert(false)
         navigate("/todo")
       } else {
         setShowErrorAlert(true)
       }
+      
     } catch (error) {
       console.log("Error catch:", error);
     }
