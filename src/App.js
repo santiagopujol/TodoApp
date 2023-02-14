@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import { useDispatch } from 'react-redux'
 import { setUserLogged } from './redux/slices/user/userSlice';
+import { AppContextProvider } from './context.js';
 
 function App() {
   const dispatch = useDispatch()
@@ -23,6 +24,7 @@ function App() {
   console.log(userLogged);
 
   return (
+    <AppContextProvider>
       <Router>
           <Routes>
             {!userLogged
@@ -35,6 +37,8 @@ function App() {
             <Route exact path="/todo" element={<Todo />} />
           </Routes>
       </Router>
+    </AppContextProvider>
+
   );
 }
 

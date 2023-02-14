@@ -1,20 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import {useDispatch } from 'react-redux'
+import {useDispatch, useSelector } from 'react-redux'
 import { addTodo, updateTodo } from './../../../redux/slices/todo/todoSlice';
 import {v4 as uuid} from 'uuid'
 import Form from 'react-bootstrap/Form';
+import { useAppContext } from '../../../context';
 
 function TodoModalAbm({open, data}) {
-  const [show, setShow] = useState(open);
-  const handleClose = () => setShow(false);
   const dispatch = useDispatch()
-  console.log(open, data)
 
-  useEffect(() => {  
-    setShow(open)
-  }, [open]);
+  const {
+    openTodoModalAbm,
+    setOpenTodoModalAbm
+  } = useAppContext();
+
+  const handleClose = () => {
+    setOpenTodoModalAbm(false);
+  }
+  console.log(open)
+
+  useEffect(() => {
+
+  }, [openTodoModalAbm]);
 
   const [stateForm, setStateForm] = useState({
     userId: data != null ? data.userId : 1,
@@ -22,9 +30,8 @@ function TodoModalAbm({open, data}) {
     title: data != null ? data.title : null,
     completed: data != null ? data.completed : false
   });
-
+  
   function handleChange(e) {
-    console.log(e.target.value)
     setStateForm({ ...stateForm, [e.target.name]: e.target.value });
   }
 
@@ -41,6 +48,7 @@ function TodoModalAbm({open, data}) {
         dispatch(updateTodo(stateForm))
       }
       handleClose()
+      // setOperationFinalized(true)
     } catch (error) {
       console.log("Error catch:", error);
     }
@@ -48,7 +56,7 @@ function TodoModalAbm({open, data}) {
 
   return (
     <>
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={openTodoModalAbm} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>{data != null ? 'Edit' : 'Add'} Todo</Modal.Title>
         </Modal.Header>

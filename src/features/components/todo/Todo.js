@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import BootstrapTable from "react-bootstrap-table-next";
 import paginationFactory from "react-bootstrap-table2-paginator";
 import TodoModalAbm from './TodoModalAbm';
+import { useAppContext } from '../../../context';
 
 export function Todo() {
   const todoState = useSelector((state) => state.todo)
@@ -16,12 +17,17 @@ export function Todo() {
   const [openModalAbm, setOpenModalAbm] = useState(false);
   const [toDoElementEdit, setToDoElementEdit] = useState(null);
 
+  const {
+    openTodoModalAbm,
+    setOpenTodoModalAbm
+  } = useAppContext();
+
   const editTodoButton = (cell, row, rowIndex, formatExtraData) => {
     return (
       <button className="btn btn-primary"
         onClick={() => {
-          setOpenModalAbm(true); 
           setToDoElementEdit(row);
+          setOpenTodoModalAbm(true); 
         }}
       >
         Edit
@@ -33,8 +39,8 @@ export function Todo() {
     return (
       <button className="btn btn-danger"
         onClick={() => {
-          setOpenModalAbm(false); 
           dispatch(deleteTodo(row.id));
+          setOpenTodoModalAbm(false); 
         }}
       >
         Delete
@@ -92,7 +98,7 @@ export function Todo() {
 
   const ModalAbmComponent = () => {
     return (
-      <TodoModalAbm open={openModalAbm} data={toDoElementEdit}/>
+      <TodoModalAbm open={openTodoModalAbm} data={toDoElementEdit}/>
     )
   }
 
@@ -119,7 +125,7 @@ export function Todo() {
         <button 
           type="button" 
           className="btn btn-success float-end"
-          onClick={() => { setOpenModalAbm(true); setToDoElementEdit(null) }}
+          onClick={() => { setOpenTodoModalAbm(true); setToDoElementEdit(null) }}
         >
           Add New Task
         </button>
