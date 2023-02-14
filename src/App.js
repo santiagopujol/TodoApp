@@ -1,6 +1,6 @@
 import React from 'react';
-import { Login } from './features/components/login/Login';
-import { Todo } from './features/components/todo/Todo';
+import { Login } from './components/login/Login';
+import { Todo } from './components/todo/Todo';
 import './App.css';
 import {
   BrowserRouter as Router,

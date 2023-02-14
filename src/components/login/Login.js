@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import logo from '../../../logo.svg';
-import { getUsers, setUserLogin } from '../../../redux/slices/user/userSlice';
+import logo from '../../logo.svg';
+import { getUsers, setUserLogin } from '../../redux/slices/user/userSlice';
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Alert from 'react-bootstrap/Alert';

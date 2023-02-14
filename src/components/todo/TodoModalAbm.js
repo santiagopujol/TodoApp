@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import {useDispatch } from 'react-redux'
-import { addTodo, updateTodo } from './../../../redux/slices/todo/todoSlice';
+import { addTodo, updateTodo } from '../../redux/slices/todo/todoSlice';
 import {v4 as uuid} from 'uuid'
 import Form from 'react-bootstrap/Form';
-import { useAppContext } from '../../../context';
+import { useAppContext } from '../../context';
 
 function TodoModalAbm({open, data}) {
   const dispatch = useDispatch()

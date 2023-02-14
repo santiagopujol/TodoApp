@@ -1,13 +1,13 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { getTodos, deleteTodo } from '../../../redux/slices/todo/todoSlice';
-import { setUserLogout } from '../../../redux/slices/user/userSlice';
+import { getTodos, deleteTodo } from '../../redux/slices/todo/todoSlice';
+import { setUserLogout } from '../../redux/slices/user/userSlice';
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import BootstrapTable from "react-bootstrap-table-next";
 import paginationFactory from "react-bootstrap-table2-paginator";
 import TodoModalAbm from './TodoModalAbm';
-import { useAppContext } from '../../../context';
+import { useAppContext } from '../../context';
 
 export function Todo() {
   const todoState = useSelector((state) => state.todo)
