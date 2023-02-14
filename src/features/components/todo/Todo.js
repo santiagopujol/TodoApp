@@ -33,6 +33,7 @@ export function Todo() {
     return (
       <button className="btn btn-danger"
         onClick={() => {
+          setOpenModalAbm(false); 
           dispatch(deleteTodo(row.id));
         }}
       >
