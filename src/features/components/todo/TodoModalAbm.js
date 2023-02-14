@@ -18,11 +18,6 @@ function TodoModalAbm({open, data}) {
   const handleClose = () => {
     setOpenTodoModalAbm(false);
   }
-  console.log(open)
-
-  useEffect(() => {
-
-  }, [openTodoModalAbm]);
 
   const [stateForm, setStateForm] = useState({
     userId: data != null ? data.userId : 1,

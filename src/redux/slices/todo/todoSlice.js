@@ -39,7 +39,7 @@ export const getTodos = () => async (dispatch) => {
     const todoListData = await res.json();
     dispatch(setTodoList(todoListData))
   } catch (error) {
-    console.log(error)
+    console.log("Error catch:", error);
   }
 }
       

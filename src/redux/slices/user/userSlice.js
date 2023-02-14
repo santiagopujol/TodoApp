@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-  // Mock data user
-  const USERDATA = [{
-    idUser: 1,
-    email: "test@gmail.com",
-    username: "usertest",
-    password: "test"
-  }];
+// Mock data user
+const USERDATA = [{
+  idUser: 1,
+  email: "test@gmail.com",
+  username: "usertest",
+  password: "test"
+}];
 
 export const userSlice = createSlice({
   name: 'user',
@@ -45,4 +45,3 @@ export const setUserLogout = () => (dispatch) => {
 }
 
 export default userSlice.reducer
-

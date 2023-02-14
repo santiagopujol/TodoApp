@@ -21,8 +21,6 @@ function App() {
 
   dispatch(setUserLogged(userLogged));
 
-  console.log(userLogged);
-
   return (
     <AppContextProvider>
       <Router>
@@ -38,7 +36,6 @@ function App() {
           </Routes>
       </Router>
     </AppContextProvider>
-
   );
 }
 
