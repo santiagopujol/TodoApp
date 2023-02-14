@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import {useDispatch, useSelector } from 'react-redux'
+import {useDispatch } from 'react-redux'
 import { addTodo, updateTodo } from './../../../redux/slices/todo/todoSlice';
 import {v4 as uuid} from 'uuid'
 import Form from 'react-bootstrap/Form';
