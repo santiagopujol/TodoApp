@@ -38,7 +38,6 @@ export function Todo() {
       <button className="btn btn-danger"
         onClick={() => {
           dispatch(deleteTodo(row.id));
-          setOpenTodoModalAbm(false); 
         }}
       >
         Delete
